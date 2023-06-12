@@ -69,6 +69,11 @@ format="""\
   disabled = false
   detect_files = ["Chart.yaml", "values.yaml"]
 
+[kubernetes.context_aliases]
+dev-izi-compute-cluster = 'dev'
+staging-izi-compute-cluster = 'staging'
+production-izi-compute-cluster = 'prod'
+
 [character]
   success_symbol = "[➜](green)"
   error_symbol = "[✗](red)"

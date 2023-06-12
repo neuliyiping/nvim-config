@@ -39,7 +39,7 @@ screenchange-reload = true
 pseudo-transparency = true
 
 [bar/main]
-monitor = ${env:MONITOR:DP-4}
+monitor = ${env:MONITOR:eDP-1}
 
 width = 100%
 height = 25
@@ -67,12 +67,11 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 1
 
-font-0 = "InconsolataLGC Nerd Font Mono:size=10;1"
-font-1 = "FontAwesome:size=14;1"
+font-0 = "InconsolataLGC Nerd Font Mono:size=12;1"
 
 modules-left = i3
 modules-center =
-modules-right = cpu xkeyboard pulseaudio bluetooth wlan eth eth2 date
+modules-right = backlight battery cpu xkeyboard pulseaudio bluetooth wlan eth date
 
 tray-position = none
 
@@ -91,7 +90,7 @@ wrapping-scroll = false
 enable-scroll = false
 
 ws-icon-0 = 1;
-ws-icon-1 = 2;
+ws-icon-1 = 2;
 ws-icon-2 = 3;
 ws-icon-3 = 4;
 ws-icon-4 = 5;
@@ -208,7 +207,7 @@ label-disconnected-foreground = ${colors.off}
 
 [module/eth]
 type = internal/network
-interface = enp6s0
+interface = enp60s0u2u2c2
 interval = 1
 
 label-connected = " %downspeed:9%"
@@ -217,15 +216,42 @@ label-connected-foreground = ${colors.purple}
 label-disconnected = "-1"
 label-disconnected-foreground = ${colors.off}
 
-[module/eth2]
-type = internal/network
-interface = enp5s0
-interval = 1
+[module/battery]
+type = internal/battery
 
-label-connected = " %downspeed:9%"
-label-connected-foreground = ${colors.frost2}
+full-at = 99
+low-at = 5
 
-label-disconnected = "-2"
-label-disconnected-foreground = ${colors.off}
+battery = BAT0
+adapter = AC
+poll-interval = 5
+
+format-charging = <animation-charging> <label-charging>
+format-discharging = <ramp-capacity> <label-discharging>
+
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+
+animation-discharging-0 = 
+animation-discharging-1 = 
+animation-discharging-2 = 
+animation-discharging-3 = 
+animation-discharging-4 = 
+
+animation-low-0 = !
+
+[module/backlight]
+type = internal/xbacklight
+output = eDP-1
+enable-scroll = false
 
 # vi: ft=conf

@@ -23,7 +23,7 @@ exec_always --no-startup-id "$DOTFILES/bin/autostart_always.sh"
 # Var
 set $DOTFILES $HOME/.config/dotfiles
 set $TERMINAL wezterm
-set $BROWSER firefox
+set $BROWSER chromium-browser
 
 # Super key
 set $mod Mod4
@@ -114,8 +114,8 @@ for_window [class="^.*"] border pixel 2
 font pango:comicmono-14 10
 
 # Displays
-set $MAIN_SCREEN "DP-1"
-set $SECONDARY_SCREEN "DP-2"
+set $LAPTOP_SCREEN "eDP-1"
+set $MAIN_SCREEN "HDMI-1"
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
@@ -158,11 +158,11 @@ bindsym $mod+Shift+o move container to workspace $ws9
 bindsym $mod+Shift+p move container to workspace $ws10
 
 
-workspace $ws1 output $SECONDARY_SCREEN
-workspace $ws2 output $SECONDARY_SCREEN
-workspace $ws3 output $SECONDARY_SCREEN
-workspace $ws4 output $SECONDARY_SCREEN
-workspace $ws5 output $SECONDARY_SCREEN
+workspace $ws1 output $MAIN_SCREEN
+workspace $ws2 output $MAIN_SCREEN
+workspace $ws3 output $MAIN_SCREEN
+workspace $ws4 output $MAIN_SCREEN
+workspace $ws5 output $LAPTOP_SCREEN
 workspace $ws6 output $MAIN_SCREEN
 workspace $ws7 output $MAIN_SCREEN
 workspace $ws8 output $MAIN_SCREEN

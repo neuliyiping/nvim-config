@@ -25,13 +25,14 @@ local function setup()
     local sources = {
         null_ls.builtins.formatting.reorder_python_imports,
         null_ls.builtins.formatting.black,
-        null_ls.builtins.formatting.prettier.with({ disabled_filetypes = { "html" } }),
+        null_ls.builtins.formatting.prettier.with({ disabled_filetypes = { "html", "yaml" } }),
         null_ls.builtins.formatting.djhtml,
         null_ls.builtins.diagnostics.selene.with({
             extra_args = { "--config", vim.fn.expand("$DOTFILES/selene.toml") },
         }),
         null_ls.builtins.formatting.stylua,
         null_ls.builtins.formatting.shfmt.with({ filetypes = { "sh", "zsh" } }),
+        null_ls.builtins.formatting.terraform_fmt,
         null_ls.builtins.formatting.trim_newlines,
         null_ls.builtins.formatting.trim_whitespace,
         null_ls.builtins.diagnostics.flake8.with({

@@ -53,7 +53,6 @@ local function setup()
     borders()
     setup_all_servers({
         "pylsp",
-        "tailwindcss",
         "tsserver",
     })
 end

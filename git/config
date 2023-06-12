@@ -1,7 +1,7 @@
 [user]
-    email = ferran@jovell.dev
+    email = ferran.jovell@izirecord.com
     name = Ferran Jovell
-    signingkey = FA9B3458F68001AB
+    signingkey = 6265ADB8069316EF
 
 [help]
 	autocorrect = 1
